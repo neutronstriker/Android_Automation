@@ -1,0 +1,167 @@
+C51 COMPILER V8.01   ANDROID_AUTOMATION                                                    07/26/2014 00:05:48 PAGE 1   
+
+
+C51 COMPILER V8.01, COMPILATION OF MODULE ANDROID_AUTOMATION
+OBJECT MODULE PLACED IN android_automation.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE android_automation.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #include<stdio.h>
+   3          
+   4          /*Program for Controlling Electrical Appliances via bluetooth module like HC-05 or HC-06 
+   5          connected to a microcontroller (in this case AT89s52) using Android Phone or Laptop 
+   6          
+   7          Program Author : NeutroN StrikeR a.k.a N.Srinivas
+   8          
+   9          */
+  10          
+  11          #define on 1
+  12          #define off 0
+  13          
+  14          #define relay_port P2
+  15          
+  16          sbit led = P1^0;   //Indicator Led
+  17          
+  18          /* Port 1 used as input to uln2803 to drive relays*/
+  19          
+  20          sbit relay1=P2^0;        
+  21          sbit relay2=P2^1;
+  22          sbit relay3=P2^2;
+  23          sbit relay4=P2^3;
+  24          sbit relay5=P2^4;
+  25          sbit relay6=P2^5;
+  26          sbit relay7=P2^6;
+  27          sbit relay8=P2^7;
+  28          
+  29          void main()
+  30          {
+  31   1              unsigned char x;
+  32   1      
+  33   1              /* Serial port initialized at 9600 baud using crystal 11.0592Mhz*/
+  34   1      
+  35   1              SCON=0x52;
+  36   1              TMOD=0x20;
+  37   1              TH1=-3;
+  38   1              TL1=-3;
+  39   1              TR1=1;
+  40   1              
+  41   1              relay_port = 0;          //Initialize PORT -1 
+  42   1              
+  43   1              led = 0; // Led Indicator Turned On
+  44   1              
+  45   1              while(RI == 0);
+  46   1              printf("Bluetooth Android Automation via PC and Android \n \
+  47   1                              Designed by NeutroN Striker a.k.a N.Srinivas \n\n \     
+  48   1                              To Turn On Relay-1 send 'A' \n \
+  49   1                              to turn it off send 'a' \n \
+  50   1                              For Relay-2 'B' On 'b' Off \n \
+  51   1                              For Relay-3 'C' On 'c' Off \n \
+  52   1                              For Relay-4 'D' On 'd' Off \n \
+  53   1                              For Relay-5 'E' On 'e' Off \n \
+  54   1                              For Relay-6 'F' On 'f' Off \n \
+  55   1                              For Relay-7 'G' On 'g' Off \n \
+C51 COMPILER V8.01   ANDROID_AUTOMATION                                                    07/26/2014 00:05:48 PAGE 2   
+
+  56   1                              For Relay-8 'H' On 'h' Off \n \
+  57   1                              Send 'I' to turn On all \n \
+  58   1                              Send 'i' to turn Off all \n ");
+  59   1                              
+  60   1      
+  61   1              while(1)
+  62   1              {
+  63   2                      while (RI==0);
+  64   2      
+  65   2                      x=SBUF;
+  66   2                      switch(x)
+  67   2                      {
+  68   3                      case 'A':relay1 = on;
+  69   3                      printf("Relay-1 is ON\n");
+  70   3                      break;
+  71   3                      case 'a':relay1 = off;
+  72   3                      printf("Relay-1 is OFF\n");
+  73   3                      break;
+  74   3      
+  75   3                      case 'B':relay2 = on;
+  76   3                      printf("Relay-2 is ON\n");
+  77   3                      break;
+  78   3                      case 'b':relay2 = off;
+  79   3                      printf("Relay-2 is OFF\n");
+  80   3                      break;
+  81   3                                      
+  82   3                      case 'C':relay3 = on;
+  83   3                      printf("Relay-3 is ON\n");
+  84   3                      break;
+  85   3                      case 'c':relay3 = off;
+  86   3                      printf("Relay-3 is OFF\n");
+  87   3                      break;
+  88   3                      
+  89   3                      case 'D':relay4 = on;
+  90   3                      printf("Relay-4 is ON\n");
+  91   3                      break;
+  92   3                      case 'd':relay4 = off;
+  93   3                      printf("Relay-4 is OFF\n");
+  94   3                      break;
+  95   3                      
+  96   3                      case 'E':relay5 = on;
+  97   3                      printf("Relay-5 is ON\n");
+  98   3                      break;
+  99   3                      case 'e':relay5 = off;
+ 100   3                      printf("Relay-5 is OFF\n");
+ 101   3                      break;
+ 102   3      
+ 103   3                      case 'F':relay6 = on;
+ 104   3                      printf("Relay-6 is ON\n");
+ 105   3                      break;
+ 106   3                      case 'f':relay6 = off;
+ 107   3                      printf("Relay-6 is OFF\n");
+ 108   3                      break;
+ 109   3      
+ 110   3                      case 'G':relay7 = on;
+ 111   3                      printf("Relay-7 is ON\n");
+ 112   3                      break;
+ 113   3                      case 'g':relay7 = off;
+ 114   3                      printf("Relay-7 is OFF\n");
+ 115   3                      break;
+ 116   3      
+ 117   3                      case 'H':relay8 = on;
+C51 COMPILER V8.01   ANDROID_AUTOMATION                                                    07/26/2014 00:05:48 PAGE 3   
+
+ 118   3                      printf("Relay-8 is ON\n");
+ 119   3                      break;
+ 120   3                      case 'h':relay8 = off;
+ 121   3                      printf("Relay-8 is OFF\n");
+ 122   3                      break;
+ 123   3      
+ 124   3                      case 'I':
+ 125   3                      printf("ALL Relays are ON\n");
+ 126   3                      
+ 127   3                      relay_port = 0xff;
+ 128   3                      break;
+ 129   3      
+ 130   3                      case 'i':
+ 131   3                      printf("ALL Relays are OFF\n");
+ 132   3                      
+ 133   3                      relay_port = 0;         
+ 134   3      
+ 135   3                      }
+ 136   2                              RI=0;
+ 137   2                              x=0;    
+ 138   2                      
+ 139   2              }
+ 140   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    300    ----
+   CONSTANT SIZE    =    734    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

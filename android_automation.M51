@@ -1,0 +1,231 @@
+BL51 BANKED LINKER/LOCATER V6.00                                                        07/26/2014  00:05:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.00, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE android_automation.obj TO android_automation RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  android_automation.obj (ANDROID_AUTOMATION)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  android_automation (ANDROID_AUTOMATION)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0015H     UNIT         _DATA_GROUP_
+                    001DH     0003H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0B5CH     02DEH     UNIT         ?CO?ANDROID_AUTOMATION
+            CODE    0E3AH     012CH     UNIT         ?PR?MAIN?ANDROID_AUTOMATION
+            CODE    0F66H     008EH     UNIT         ?C?LIB_CODE
+            CODE    0FF4H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    101BH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   android_automation (ANDROID_AUTOMATION)
+
+
+SEGMENT                                BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT               START    LENGTH     START    LENGTH
+-----------------------------------------------------------------------
+?C_C51STARTUP                       -----    -----      -----    -----
+  +--> ?PR?MAIN?ANDROID_AUTOMATION
+
+?PR?MAIN?ANDROID_AUTOMATION         -----    -----      0008H    0001H
+  +--> ?CO?ANDROID_AUTOMATION
+  +--> ?PR?PRINTF?PRINTF
+
+BL51 BANKED LINKER/LOCATER V6.00                                                      07/26/2014  00:05:48  PAGE 2
+
+
+?PR?PRINTF?PRINTF                   0020H.0  0001H.1    0009H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  android_automation (ANDROID_AUTOMATION)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ANDROID_AUTOMATION
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  C:0E3AH         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:0090H.0       PUBLIC        led
+  D:008DH         PUBLIC        TH1
+  B:00A0H.0       PUBLIC        relay1
+  D:008BH         PUBLIC        TL1
+  B:00A0H.1       PUBLIC        relay2
+  B:00A0H.2       PUBLIC        relay3
+  B:00A0H.3       PUBLIC        relay4
+  B:00A0H.4       PUBLIC        relay5
+  B:00A0H.5       PUBLIC        relay6
+  B:00A0H.6       PUBLIC        relay7
+  B:0088H.6       PUBLIC        TR1
+  B:00A0H.7       PUBLIC        relay8
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        x
+  -------         ENDDO         
+  C:0E3AH         LINE#         29
+  C:0E3AH         LINE#         30
+  C:0E3AH         LINE#         35
+  C:0E3DH         LINE#         36
+  C:0E40H         LINE#         37
+  C:0E43H         LINE#         38
+  C:0E46H         LINE#         39
+  C:0E48H         LINE#         41
+  C:0E4BH         LINE#         43
+  C:0E4DH         LINE#         45
+  C:0E50H         LINE#         46
+  C:0E59H         LINE#         61
+  C:0E59H         LINE#         62
+  C:0E59H         LINE#         63
+  C:0E5CH         LINE#         65
+  C:0E5FH         LINE#         66
+BL51 BANKED LINKER/LOCATER V6.00                                                      07/26/2014  00:05:48  PAGE 3
+
+
+  C:0E9EH         LINE#         67
+  C:0E9EH         LINE#         68
+  C:0EA0H         LINE#         69
+  C:0EA6H         LINE#         70
+  C:0EA9H         LINE#         71
+  C:0EABH         LINE#         72
+  C:0EB1H         LINE#         73
+  C:0EB4H         LINE#         75
+  C:0EB6H         LINE#         76
+  C:0EBCH         LINE#         77
+  C:0EBFH         LINE#         78
+  C:0EC1H         LINE#         79
+  C:0EC7H         LINE#         80
+  C:0EC9H         LINE#         82
+  C:0ECBH         LINE#         83
+  C:0ED1H         LINE#         84
+  C:0ED3H         LINE#         85
+  C:0ED5H         LINE#         86
+  C:0EDBH         LINE#         87
+  C:0EDDH         LINE#         89
+  C:0EDFH         LINE#         90
+  C:0EE5H         LINE#         91
+  C:0EE7H         LINE#         92
+  C:0EE9H         LINE#         93
+  C:0EEFH         LINE#         94
+  C:0EF1H         LINE#         96
+  C:0EF3H         LINE#         97
+  C:0EF9H         LINE#         98
+  C:0EFBH         LINE#         99
+  C:0EFDH         LINE#         100
+  C:0F03H         LINE#         101
+  C:0F05H         LINE#         103
+  C:0F07H         LINE#         104
+  C:0F0DH         LINE#         105
+  C:0F0FH         LINE#         106
+  C:0F11H         LINE#         107
+  C:0F17H         LINE#         108
+  C:0F19H         LINE#         110
+  C:0F1BH         LINE#         111
+  C:0F21H         LINE#         112
+  C:0F23H         LINE#         113
+  C:0F25H         LINE#         114
+  C:0F2BH         LINE#         115
+  C:0F2DH         LINE#         117
+  C:0F2FH         LINE#         118
+  C:0F35H         LINE#         119
+  C:0F37H         LINE#         120
+  C:0F39H         LINE#         121
+  C:0F42H         LINE#         122
+  C:0F44H         LINE#         124
+  C:0F44H         LINE#         125
+  C:0F4DH         LINE#         127
+  C:0F50H         LINE#         128
+  C:0F52H         LINE#         130
+  C:0F52H         LINE#         131
+  C:0F5BH         LINE#         133
+  C:0F5EH         LINE#         135
+BL51 BANKED LINKER/LOCATER V6.00                                                      07/26/2014  00:05:48  PAGE 4
+
+
+  C:0F5EH         LINE#         136
+  C:0F60H         LINE#         137
+  C:0F63H         LINE#         139
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ANDROID_AUTOMATION
+
+  -------         MODULE        ?C?CCASE
+  C:0F66H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PRINTF
+  D:0009H         PUBLIC        ?_PRINTF517?BYTE
+  D:0009H         PUBLIC        ?_PRINTF?BYTE
+  D:0009H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0009H         PUBLIC        ?_SPRINTF?BYTE
+  C:0862H         PUBLIC        _PRINTF
+  C:0862H         PUBLIC        _PRINTF517
+  C:085CH         PUBLIC        _SPRINTF
+  C:085CH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:0F8CH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0FA5H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0FD2H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0FE4H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        PUTCHAR
+  C:0FF4H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 040AH BYTE (50%) *
+******************************************************************************
+
+Program Size: data=31.1 xdata=0 code=2090
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,7 +1,7 @@
 Android_Automation
 ==================
 
-It is the device part of the code which runs on At89s52 micro-controller which on receiving certain characters via serial port turns on or off relays which in again turns on or off electrical appliances.
+It is the device part of the code which runs on At89s52 micro-controller which on receiving certain characters via serial port turns on or off relays which again turns on or off electrical appliances.
 
 The program was written in C using Keil uVision 2 ide.
 
